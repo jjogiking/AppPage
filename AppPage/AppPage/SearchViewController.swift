@@ -9,21 +9,44 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
+    private lazy var appIdTextField: UITextField = {
+        let textField = UITextField()
+        textField.borderStyle = .roundedRect
+        textField.placeholder = "APP_ID를 입력하세요."
+        textField.clearButtonMode = .always
+        textField.keyboardType = .numberPad
+        return textField
+    }()
+    
+    private lazy var submitButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Search", for: .normal)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupLayout()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+ 
+    private func setupLayout() {
+        view.addSubview(appIdTextField)
+        appIdTextField.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            appIdTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            appIdTextField.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            appIdTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+            appIdTextField.heightAnchor.constraint(equalToConstant: 44)
+        ])
+        
+        view.addSubview(submitButton)
+        submitButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            submitButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            submitButton.topAnchor.constraint(equalTo: appIdTextField.bottomAnchor, constant: 8),
+            submitButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+            submitButton.heightAnchor.constraint(equalToConstant: 44)
+        ])
     }
-    */
-
 }
