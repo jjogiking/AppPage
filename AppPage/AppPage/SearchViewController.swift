@@ -62,6 +62,7 @@ class SearchViewController: UIViewController {
         }
         
         viewModel.requestAppData()
+            .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {
                 case .failure(let error):
