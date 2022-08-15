@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E72460128AA61D200C04114 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E72460028AA61D200C04114 /* SearchViewModel.swift */; };
 		1EF752DD28A544C300CF8F92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF752DC28A544C300CF8F92 /* AppDelegate.swift */; };
 		1EF752DF28A544C300CF8F92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF752DE28A544C300CF8F92 /* SceneDelegate.swift */; };
 		1EF752E628A544C400CF8F92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EF752E528A544C400CF8F92 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E72460028AA61D200C04114 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		1EF752D928A544C300CF8F92 /* AppPage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppPage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EF752DC28A544C300CF8F92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EF752DE28A544C300CF8F92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 		1EF752DB28A544C300CF8F92 /* AppPage */ = {
 			isa = PBXGroup;
 			children = (
+				1E72460028AA61D200C04114 /* SearchViewModel.swift */,
 				1EF752DC28A544C300CF8F92 /* AppDelegate.swift */,
 				1EF752DE28A544C300CF8F92 /* SceneDelegate.swift */,
 				1EF752F028A545CE00CF8F92 /* SearchViewController.swift */,
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E72460128AA61D200C04114 /* SearchViewModel.swift in Sources */,
 				1EF752DD28A544C300CF8F92 /* AppDelegate.swift in Sources */,
 				1EF752F128A545CE00CF8F92 /* SearchViewController.swift in Sources */,
 				1EF752DF28A544C300CF8F92 /* SceneDelegate.swift in Sources */,
