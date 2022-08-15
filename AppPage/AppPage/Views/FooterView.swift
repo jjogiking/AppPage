@@ -22,13 +22,18 @@ final class FooterView: UICollectionReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = .systemBackground
         
+        setupLayout()
+    }
+    
+    private func setupLayout() {
         addSubview(lineView)
         lineView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             lineView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             lineView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            lineView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 30),
+            lineView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             lineView.heightAnchor.constraint(equalToConstant: 1)
         ])
     }
