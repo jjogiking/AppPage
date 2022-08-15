@@ -15,7 +15,7 @@ class SearchViewController: UIViewController {
     private lazy var appIdTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
-        textField.placeholder = "APP_ID를 입력하세요."
+        textField.placeholder = "APP_ID를 입력하세요. ex) 872469884"
         textField.clearButtonMode = .always
         textField.keyboardType = .numberPad
         return textField
