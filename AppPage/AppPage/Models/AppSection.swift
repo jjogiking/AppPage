@@ -25,4 +25,15 @@ enum AppSection {
     case headline(Headline)
     case feature(Feature)
     case preview([Preview])
+    
+    var descriptionName: String {
+        switch self {
+        case .headline(_):
+            return ""
+        case .feature(_):
+            return "세부설명"
+        case .preview(_):
+            return "스크린샷"
+        }
+    }
 }
