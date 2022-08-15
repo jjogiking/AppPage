@@ -72,8 +72,13 @@ class SearchViewController: UIViewController {
                     print(#function, #line)
                     // TODO: 다음 화면 출력
                 }
-            } receiveValue: { details in
+            } receiveValue: { [weak self] details in
+                guard let self = self else {
+                    return
+                }
                 print(details)
+                let second = AppDetailViewController()
+                self.navigationController?.pushViewController(second, animated: true)
             }
             .store(in: &cancelBag)
     }
