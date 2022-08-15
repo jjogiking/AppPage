@@ -8,7 +8,7 @@
 import UIKit
 
 final class HeadlineCell: UICollectionViewCell {
-    static let  identifier = "HeadlineCell"
+    static let identifier = "HeadlineCell"
     
     private let imageView = UIImageView()
     private lazy var titleLabel: UILabel = {

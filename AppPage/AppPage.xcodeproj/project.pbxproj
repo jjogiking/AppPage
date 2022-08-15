@@ -10,6 +10,9 @@
 		1E4518B728AA928800CD4C75 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4518B628AA928800CD4C75 /* FooterView.swift */; };
 		1E4518B928AA92BB00CD4C75 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4518B828AA92BB00CD4C75 /* HeaderView.swift */; };
 		1E4518BB28AA930100CD4C75 /* HeadlineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4518BA28AA930100CD4C75 /* HeadlineCell.swift */; };
+		1E4518BE28AA949F00CD4C75 /* AppSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4518BD28AA949F00CD4C75 /* AppSection.swift */; };
+		1E4518C028AA9B0500CD4C75 /* FeatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4518BF28AA9B0500CD4C75 /* FeatureCell.swift */; };
+		1E4518C228AA9B2700CD4C75 /* PreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4518C128AA9B2700CD4C75 /* PreviewCell.swift */; };
 		1E72460128AA61D200C04114 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E72460028AA61D200C04114 /* SearchViewModel.swift */; };
 		1EF752DD28A544C300CF8F92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF752DC28A544C300CF8F92 /* AppDelegate.swift */; };
 		1EF752DF28A544C300CF8F92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF752DE28A544C300CF8F92 /* SceneDelegate.swift */; };
@@ -24,6 +27,9 @@
 		1E4518B628AA928800CD4C75 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		1E4518B828AA92BB00CD4C75 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		1E4518BA28AA930100CD4C75 /* HeadlineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineCell.swift; sourceTree = "<group>"; };
+		1E4518BD28AA949F00CD4C75 /* AppSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSection.swift; sourceTree = "<group>"; };
+		1E4518BF28AA9B0500CD4C75 /* FeatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FeatureCell.swift; path = AppPage/Views/FeatureCell.swift; sourceTree = "<group>"; };
+		1E4518C128AA9B2700CD4C75 /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviewCell.swift; path = AppPage/Views/PreviewCell.swift; sourceTree = "<group>"; };
 		1E72460028AA61D200C04114 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		1EF752D928A544C300CF8F92 /* AppPage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppPage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EF752DC28A544C300CF8F92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,9 +63,19 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		1E4518BC28AA948D00CD4C75 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1E4518BD28AA949F00CD4C75 /* AppSection.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1EF752D028A544C300CF8F92 = {
 			isa = PBXGroup;
 			children = (
+				1E4518C128AA9B2700CD4C75 /* PreviewCell.swift */,
+				1E4518BF28AA9B0500CD4C75 /* FeatureCell.swift */,
 				1EF752DB28A544C300CF8F92 /* AppPage */,
 				1EF752DA28A544C300CF8F92 /* Products */,
 			);
@@ -76,6 +92,7 @@
 		1EF752DB28A544C300CF8F92 /* AppPage */ = {
 			isa = PBXGroup;
 			children = (
+				1E4518BC28AA948D00CD4C75 /* Models */,
 				1E4518B528AA924100CD4C75 /* Views */,
 				1E72460028AA61D200C04114 /* SearchViewModel.swift */,
 				1EF752DC28A544C300CF8F92 /* AppDelegate.swift */,
@@ -161,9 +178,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E72460128AA61D200C04114 /* SearchViewModel.swift in Sources */,
+				1E4518C028AA9B0500CD4C75 /* FeatureCell.swift in Sources */,
+				1E4518BE28AA949F00CD4C75 /* AppSection.swift in Sources */,
 				1E4518B728AA928800CD4C75 /* FooterView.swift in Sources */,
 				1EF752DD28A544C300CF8F92 /* AppDelegate.swift in Sources */,
 				1EF752F128A545CE00CF8F92 /* SearchViewController.swift in Sources */,
+				1E4518C228AA9B2700CD4C75 /* PreviewCell.swift in Sources */,
 				1E4518BB28AA930100CD4C75 /* HeadlineCell.swift in Sources */,
 				1EF752DF28A544C300CF8F92 /* SceneDelegate.swift in Sources */,
 				1EF752F328A547AB00CF8F92 /* AppDetailViewController.swift in Sources */,
