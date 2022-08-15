@@ -5,10 +5,13 @@
 //  Created by Giwan Jo on 2022/08/11.
 //
 
+import Combine
 import UIKit
 
 class SearchViewController: UIViewController {
-
+    var viewModel = SearchViewModel()
+    var cancelBag = Set<AnyCancellable>()
+    
     private lazy var appIdTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
@@ -20,6 +23,7 @@ class SearchViewController: UIViewController {
     
     private lazy var submitButton: UIButton = {
         let button = UIButton(type: .system)
+        button.addTarget(self, action: #selector(didTouchSubmitButton(_:)), for: .touchUpInside)
         button.setTitle("Search", for: .normal)
         return button
     }()
@@ -48,5 +52,27 @@ class SearchViewController: UIViewController {
             submitButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
             submitButton.heightAnchor.constraint(equalToConstant: 44)
         ])
+    }
+    
+    @objc func didTouchSubmitButton(_ sender: UIButton) {
+        guard let id = appIdTextField.text,
+              id.isEmpty == false
+        else {
+            return
+        }
+        
+        viewModel.requestAppData()
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    print(error)
+                case .finished:
+                    print(#function, #line)
+                    // TODO: 다음 화면 출력
+                }
+            } receiveValue: { details in
+                print(details)
+            }
+            .store(in: &cancelBag)
     }
 }
