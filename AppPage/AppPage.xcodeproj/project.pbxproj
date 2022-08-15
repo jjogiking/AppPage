@@ -29,8 +29,8 @@
 		1E4518B828AA92BB00CD4C75 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		1E4518BA28AA930100CD4C75 /* HeadlineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineCell.swift; sourceTree = "<group>"; };
 		1E4518BD28AA949F00CD4C75 /* AppSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSection.swift; sourceTree = "<group>"; };
-		1E4518BF28AA9B0500CD4C75 /* FeatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FeatureCell.swift; path = AppPage/Views/FeatureCell.swift; sourceTree = "<group>"; };
-		1E4518C128AA9B2700CD4C75 /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviewCell.swift; path = AppPage/Views/PreviewCell.swift; sourceTree = "<group>"; };
+		1E4518BF28AA9B0500CD4C75 /* FeatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCell.swift; sourceTree = "<group>"; };
+		1E4518C128AA9B2700CD4C75 /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCell.swift; sourceTree = "<group>"; };
 		1E4518C428AA9BCE00CD4C75 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		1E72460028AA61D200C04114 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		1EF752D928A544C300CF8F92 /* AppPage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppPage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +58,8 @@
 		1E4518B528AA924100CD4C75 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1E4518C128AA9B2700CD4C75 /* PreviewCell.swift */,
+				1E4518BF28AA9B0500CD4C75 /* FeatureCell.swift */,
 				1E4518B628AA928800CD4C75 /* FooterView.swift */,
 				1E4518B828AA92BB00CD4C75 /* HeaderView.swift */,
 				1E4518BA28AA930100CD4C75 /* HeadlineCell.swift */,
@@ -69,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				1E4518BD28AA949F00CD4C75 /* AppSection.swift */,
+				1EF752F428A5572C00CF8F92 /* Models.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -81,11 +84,35 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		1E4518C628AAA57D00CD4C75 /* SearchScene */ = {
+			isa = PBXGroup;
+			children = (
+				1E72460028AA61D200C04114 /* SearchViewModel.swift */,
+				1EF752F028A545CE00CF8F92 /* SearchViewController.swift */,
+			);
+			path = SearchScene;
+			sourceTree = "<group>";
+		};
+		1E4518C728AAA59700CD4C75 /* DetailScene */ = {
+			isa = PBXGroup;
+			children = (
+				1EF752F228A547AB00CF8F92 /* AppDetailViewController.swift */,
+			);
+			path = DetailScene;
+			sourceTree = "<group>";
+		};
+		1E4518C828AAA5E700CD4C75 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				1EF752DC28A544C300CF8F92 /* AppDelegate.swift */,
+				1EF752DE28A544C300CF8F92 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		1EF752D028A544C300CF8F92 = {
 			isa = PBXGroup;
 			children = (
-				1E4518C128AA9B2700CD4C75 /* PreviewCell.swift */,
-				1E4518BF28AA9B0500CD4C75 /* FeatureCell.swift */,
 				1EF752DB28A544C300CF8F92 /* AppPage */,
 				1EF752DA28A544C300CF8F92 /* Products */,
 			);
@@ -102,15 +129,12 @@
 		1EF752DB28A544C300CF8F92 /* AppPage */ = {
 			isa = PBXGroup;
 			children = (
+				1E4518C828AAA5E700CD4C75 /* Application */,
+				1E4518C728AAA59700CD4C75 /* DetailScene */,
+				1E4518C628AAA57D00CD4C75 /* SearchScene */,
 				1E4518C328AA9BBA00CD4C75 /* Mocks */,
 				1E4518BC28AA948D00CD4C75 /* Models */,
 				1E4518B528AA924100CD4C75 /* Views */,
-				1E72460028AA61D200C04114 /* SearchViewModel.swift */,
-				1EF752DC28A544C300CF8F92 /* AppDelegate.swift */,
-				1EF752DE28A544C300CF8F92 /* SceneDelegate.swift */,
-				1EF752F028A545CE00CF8F92 /* SearchViewController.swift */,
-				1EF752F428A5572C00CF8F92 /* Models.swift */,
-				1EF752F228A547AB00CF8F92 /* AppDetailViewController.swift */,
 				1EF752E528A544C400CF8F92 /* Assets.xcassets */,
 				1EF752E728A544C400CF8F92 /* LaunchScreen.storyboard */,
 				1EF752EA28A544C400CF8F92 /* Info.plist */,
