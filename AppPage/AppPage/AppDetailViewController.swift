@@ -11,7 +11,7 @@ import UIKit
 class AppDetailViewController: UIViewController {
     //    private var viewModel: AppDetailViewModel
     
-    private let dataSource: [AppSection] = SearchViewMock.dataSource
+    private let dataSource: [AppSection] = AppDetailViewMock.dataSource
     
     private lazy var mainCollectionView: UICollectionView = {
         let layout = UICollectionViewCompositionalLayout { section, env -> NSCollectionLayoutSection? in

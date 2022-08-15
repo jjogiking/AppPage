@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum SearchViewMock {
+enum AppDetailViewMock {
     static let dataSource: [AppSection] = [
         .headline(
             .init(image: UIImage(systemName: "pencil.circle")!, title: "test1", desc: "test2")
