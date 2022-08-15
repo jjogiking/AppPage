@@ -10,11 +10,11 @@ import Foundation
 // MARK: - AppleITunes
 struct AppleITunes: Decodable {
     let resultCount: Int
-    let results: [Result]
+    let results: [Detail]
 }
 
 // MARK: - Result
-struct Result: Decodable {
+struct Detail: Decodable {
     let screenshotUrls: [String]
     let artworkUrl60, artworkUrl512, artworkUrl100: String
     let artistViewURL: String
