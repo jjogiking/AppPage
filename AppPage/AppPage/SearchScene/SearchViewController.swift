@@ -76,8 +76,8 @@ class SearchViewController: UIViewController {
                 guard let self = self else {
                     return
                 }
-                print(details)
-                let second = AppDetailViewController()
+                
+                let second = AppDetailViewController(viewModel: AppDetailViewModel(details))
                 self.navigationController?.pushViewController(second, animated: true)
             }
             .store(in: &cancelBag)

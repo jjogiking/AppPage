@@ -7,15 +7,41 @@
 
 import UIKit
 
-// TODO: Compositinal CollectionView로 구현하기
-class AppDetailViewController: UIViewController {
-    //    private var viewModel: AppDetailViewModel
+class AppDetailViewModel {
+    private(set) var dataSource: [AppSection] = []
     
-    private let dataSource: [AppSection] = AppDetailViewMock.dataSource
+    init(_ detail: Detail) {
+        dataSource = [
+            .headline(
+                .init(
+                    image: UIImage(systemName: "pencil.circle")!,
+                    title: detail.trackName,
+                    desc: detail.artistName
+                )
+            ),
+            .feature(
+                .init(
+                    title: detail.releaseNotes,
+                    desc: detail.resultDescription
+                )
+            ),
+            .preview([
+                .init(image: UIImage(systemName: "sun.min")!),
+                .init(image: UIImage(systemName: "sun.min.fill")!),
+                .init(image: UIImage(systemName: "moon")!),
+                .init(image: UIImage(systemName: "moon.fill")!),
+                .init(image: UIImage(systemName: "cloud")!)
+            ])
+        ]
+    }
+}
+
+class AppDetailViewController: UIViewController {
+    private var viewModel: AppDetailViewModel
     
     private lazy var mainCollectionView: UICollectionView = {
         let layout = UICollectionViewCompositionalLayout { section, env -> NSCollectionLayoutSection? in
-            switch self.dataSource[section] {
+            switch self.viewModel.dataSource[section] {
             case .headline:
                 return self.getLayoutHeadlineSection()
             case .feature:
@@ -55,14 +81,15 @@ class AppDetailViewController: UIViewController {
             mainCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-    //    init(viewModel: AppDetailViewModel) {
-    //        self.viewModel = viewModel
-    //        super.init(nibName: nil, bundle: nil)
-    //    }
     
-    //    required init?(coder: NSCoder) {
-    //        fatalError("init(coder:) has not been implemented")
-    //    }
+    init(viewModel: AppDetailViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 extension AppDetailViewController {
@@ -183,11 +210,11 @@ extension AppDetailViewController {
 
 extension AppDetailViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        self.dataSource.count
+        self.viewModel.dataSource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch self.dataSource[section] {
+        switch viewModel.dataSource[section] {
         case .headline(_):
             return 1
         case .feature(_):
@@ -198,7 +225,7 @@ extension AppDetailViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch self.dataSource[indexPath.section] {
+        switch viewModel.dataSource[indexPath.section] {
         case .headline(let item):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HeadlineCell.identifier, for: indexPath) as! HeadlineCell
             cell.prepare(image: item.image, titleText: item.title, descText: item.desc)
@@ -224,7 +251,7 @@ extension AppDetailViewController: UICollectionViewDataSource {
                 withReuseIdentifier: HeaderView.identifier,
                 for: indexPath
             ) as! HeaderView
-            let title = dataSource[indexPath.section].descriptionName
+            let title = viewModel.dataSource[indexPath.section].descriptionName
             headerView.prepare(titleText: title)
             return headerView
         case UICollectionView.elementKindSectionFooter:
