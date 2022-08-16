@@ -104,7 +104,7 @@ extension AppDetailViewController {
         // item
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .fractionalHeight(1)
+            heightDimension: .estimated(100)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
@@ -131,7 +131,7 @@ extension AppDetailViewController {
         // group
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .fractionalHeight(0.2)
+            heightDimension: .estimated(100)
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
@@ -206,6 +206,7 @@ extension AppDetailViewController: UICollectionViewDataSource {
         case .feature(let item):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeatureCell.identifier, for: indexPath) as! FeatureCell
             cell.prepare(titleText: item.title, descText: item.desc)
+            cell.delegate = self
             return cell
         case .preview(let previews):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PreviewCell.identifier, for: indexPath) as! PreviewCell
@@ -234,6 +235,15 @@ extension AppDetailViewController: UICollectionViewDataSource {
             )
         default:
             return UICollectionReusableView()
+        }
+    }
+}
+
+extension AppDetailViewController: DropDownDelegate {
+    func didDropDownButtonTouch(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.33, delay: 0, options: .curveEaseInOut) {
+            self.mainCollectionView.collectionViewLayout.invalidateLayout()
+            self.view.layoutIfNeeded()
         }
     }
 }
