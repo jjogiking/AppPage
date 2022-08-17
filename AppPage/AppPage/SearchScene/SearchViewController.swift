@@ -55,6 +55,13 @@ class SearchViewController: UIViewController {
         ])
     }
     
+    private func presentErrorAlert(message: String) {
+        let alertController = UIAlertController(title: "오류", message: message, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Close", style: .cancel)
+        alertController.addAction(cancel)
+        present(alertController, animated: true)
+    }
+    
     @objc func didTouchSubmitButton(_ sender: UIButton) {
         guard let id = appIdTextField.text,
               id.isEmpty == false
@@ -64,13 +71,12 @@ class SearchViewController: UIViewController {
         
         viewModel.requestAppData()
             .receive(on: DispatchQueue.main)
-            .sink { completion in
+            .sink { [weak self] completion in
                 switch completion {
                 case .failure(let error):
-                    print(error)
+                    self?.presentErrorAlert(message: error.localizedDescription)
                 case .finished:
-                    print(#function, #line)
-                    // TODO: 다음 화면 출력
+                    break
                 }
             } receiveValue: { [weak self] details in
                 guard let self = self else {
