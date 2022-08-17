@@ -52,6 +52,7 @@ class AppDetailViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .systemGroupedBackground
         collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.isScrollEnabled = true
         collectionView.register(HeadlineCell.self, forCellWithReuseIdentifier: HeadlineCell.identifier)
         collectionView.register(FeatureCell.self, forCellWithReuseIdentifier: FeatureCell.identifier)
@@ -203,6 +204,20 @@ extension AppDetailViewController {
         section.orthogonalScrollingBehavior = .groupPaging
         
         return section
+    }
+}
+
+extension AppDetailViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch viewModel.dataSource[indexPath.section] {
+        case .preview(let previews):
+            let dataSource = previews.map { $0.image }
+            let previewViewController = PreviewViewController(dataSource: dataSource, at: indexPath.item)
+            previewViewController.modalPresentationStyle = .fullScreen
+            present(previewViewController, animated: true)
+        default:
+            break
+        }
     }
 }
 
