@@ -11,7 +11,13 @@ import UIKit
 final class CustomImageView: UIImageView {
     private var cancelBag = Set<AnyCancellable>()
     
+    deinit {
+        cancelBag.removeAll()
+    }
+    
     func setImage(url: URL) {
+        cancelBag.removeAll()
+        
         let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
         URLSession.shared.publisher(for: request)
             .catch({ (error: Error) -> AnyPublisher<Result<URLSession.DataTaskPublisher.Output, Error>, Error> in
