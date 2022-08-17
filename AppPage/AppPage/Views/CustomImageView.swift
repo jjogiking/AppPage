@@ -49,5 +49,9 @@ final class CustomImageView: UIImageView {
             }
             .store(in: &cancelBag)
     }
+    
+    func cancel() {
+        cancelBag.removeAll()
+    }
 }
 

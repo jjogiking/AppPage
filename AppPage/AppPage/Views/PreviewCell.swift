@@ -41,6 +41,9 @@ final class PreviewCell: UICollectionViewCell {
         if let image = image,
            let url = URL(string: image) {
             self.imageView.setImage(url: url)
+        } else {
+            self.imageView.cancel()
+            self.imageView.image = nil
         }
     }
 }
