@@ -14,7 +14,7 @@ class AppDetailViewModel {
         dataSource = [
             .headline(
                 .init(
-                    image: UIImage(systemName: "pencil.circle")!,
+                    image: detail.artworkUrl100,
                     title: detail.trackName,
                     desc: detail.artistName
                 )
@@ -25,13 +25,11 @@ class AppDetailViewModel {
                     desc: detail.resultDescription
                 )
             ),
-            .preview([
-                .init(image: UIImage(systemName: "sun.min")!),
-                .init(image: UIImage(systemName: "sun.min.fill")!),
-                .init(image: UIImage(systemName: "moon")!),
-                .init(image: UIImage(systemName: "moon.fill")!),
-                .init(image: UIImage(systemName: "cloud")!)
-            ])
+            .preview(
+                detail.screenshotUrls.map {
+                    .init(image: $0)
+                }
+            )
         ]
     }
 }
