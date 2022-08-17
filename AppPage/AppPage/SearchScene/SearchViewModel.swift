@@ -28,13 +28,10 @@ class SearchViewModel: ObservableObject {
         return URLSession.shared.dataTaskPublisher(for: url)
             .tryMap { data, response -> Data in
                 guard let httpResponse = response as? HTTPURLResponse else {
-                    throw ServiceError.serverSideError
+                    throw ServiceError.transportError
                 }
                 guard httpResponse.statusCode == 200 else {
-                    throw ServiceError.invalidResponse(
-                        responseCode: httpResponse.statusCode,
-                        message: "invalid response"
-                    )
+                    throw ServiceError.serverError(code: httpResponse.statusCode)
                 }
                 return data
             }
