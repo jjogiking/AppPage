@@ -10,7 +10,7 @@ import UIKit
 final class HeadlineCell: UICollectionViewCell {
     static let identifier = "HeadlineCell"
     
-    private let imageView = UIImageView()
+    private let imageView = CustomImageView()
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -67,8 +67,11 @@ final class HeadlineCell: UICollectionViewCell {
         prepare(image: nil, titleText: nil, descText: nil)
     }
     
-    func prepare(image: UIImage?, titleText: String?, descText: String?) {
-        self.imageView.image = image
+    func prepare(image: String?, titleText: String?, descText: String?) {
+        if let image = image,
+           let url = URL(string: image) {
+            self.imageView.setImage(url: url)
+        }
         self.titleLabel.text = titleText
         self.descriptionLabel.text = descText
     }

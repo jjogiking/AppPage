@@ -10,7 +10,7 @@ import UIKit
 final class PreviewCell: UICollectionViewCell {
     static let identifier = "PreviewCell"
     
-    private let imageView = UIImageView()
+    private let imageView = CustomImageView()
    
     required init?(coder: NSCoder) {
         fatalError()
@@ -36,7 +36,10 @@ final class PreviewCell: UICollectionViewCell {
         prepare(image: nil)
     }
     
-    func prepare(image: UIImage?) {
-        self.imageView.image = image
+    func prepare(image: String?) {
+        if let image = image,
+           let url = URL(string: image) {
+            self.imageView.setImage(url: url)
+        }
     }
 }
