@@ -14,6 +14,7 @@ protocol DropDownDelegate: AnyObject {
 final class FeatureCell: UICollectionViewCell {
     weak var delegate: DropDownDelegate?
     static let identifier = "FeatureCell"
+    static let minLines = 3
     
     private lazy var dropDownButton: UIButton = {
         let button = UIButton(type: .system)
@@ -25,7 +26,7 @@ final class FeatureCell: UICollectionViewCell {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.numberOfLines = 3
+        label.numberOfLines = FeatureCell.minLines
         label.font = .systemFont(ofSize: 12, weight: .bold)
         return label
     }()
@@ -81,8 +82,8 @@ final class FeatureCell: UICollectionViewCell {
     }
     
     @objc func didDropDownButtonTouch(_ sender: UIButton) {
-        sender.isHidden = true
-        descriptionLabel.numberOfLines = 0
+        sender.isSelected.toggle()
+        descriptionLabel.numberOfLines = sender.isSelected ? 0 : FeatureCell.minLines
         delegate?.didDropDownButtonTouch(sender)
     }
 }
