@@ -27,14 +27,14 @@ class SearchViewController: UIViewController {
         button.setTitle("Search", for: .normal)
         return button
     }()
-    
+    // MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
 
         setupLayout()
     }
- 
+    // MARK: - Layout
     private func setupLayout() {
         view.addSubview(appIdTextField)
         appIdTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -54,7 +54,7 @@ class SearchViewController: UIViewController {
             submitButton.heightAnchor.constraint(equalToConstant: 44)
         ])
     }
-    
+    // MARK: - Actions
     private func presentErrorAlert(message: String) {
         let alertController = UIAlertController(title: "오류", message: message, preferredStyle: .alert)
         let cancel = UIAlertAction(title: "Close", style: .cancel)

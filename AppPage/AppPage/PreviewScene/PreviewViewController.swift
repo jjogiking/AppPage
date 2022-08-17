@@ -31,6 +31,7 @@ class PreviewViewController: UIViewController, UICollectionViewDataSource {
         return button
     }()
     
+    // MARK: - Life Cycles
     init(dataSource: [String], at index: Int) {
         self.dataSource = dataSource
         self.firstIndexPath = IndexPath(item: index, section: 0)
@@ -54,7 +55,7 @@ class PreviewViewController: UIViewController, UICollectionViewDataSource {
             self.mainCollectionView.scrollToItem(at: self.firstIndexPath, at: .centeredHorizontally, animated: false)
         }
     }
-    
+    // MARK: - Layout
     private func setupLayout() {
         view.addSubview(mainCollectionView)
         mainCollectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -72,11 +73,11 @@ class PreviewViewController: UIViewController, UICollectionViewDataSource {
             closeButton.rightAnchor.constraint(equalTo: view.rightAnchor),
         ])
     }
-    
+    // MARK: - Actions
     @objc func closeButtonTouch(_ sender: UIButton) {
         dismiss(animated: true)
     }
-    
+    // MARK: - Extension
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataSource.count
     }
