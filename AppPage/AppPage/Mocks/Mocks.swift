@@ -5,12 +5,16 @@
 //  Created by Giwan Jo on 2022/08/16.
 //
 
-import UIKit
+import Foundation
 
 enum AppDetailViewMock {
     static let dataSource: [AppSection] = [
         .headline(
-            .init(image: UIImage(systemName: "pencil.circle")!, title: "test1", desc: "test2")
+            .init(
+                image: "https://is5-ssl.mzstatic.com/image/thumb/Purple122/v4/c9/6d/98/c96d981e-271c-0159-5c92-fbeba5d135c1/logo_youtube_color-0-0-1x_U007emarketing-0-0-0-6-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/60x60bb.jpg",
+                title: "test1"
+                , desc: "test2"
+            )
         ),
         
         .feature(
@@ -23,11 +27,11 @@ Get the official YouTube app on iPhones and iPads. See what the world is watchin
         ),
         
         .preview([
-            .init(image: UIImage(systemName: "sun.min")!),
-            .init(image: UIImage(systemName: "sun.min.fill")!),
-            .init(image: UIImage(systemName: "moon")!),
-            .init(image: UIImage(systemName: "moon.fill")!),
-            .init(image: UIImage(systemName: "cloud")!)
-        ])
+            "https://is1-ssl.mzstatic.com/image/thumb/Purple112/v4/a8/ba/eb/a8baeb84-c246-eb08-35c0-28f22a0eee9e/dab4e6da-5c09-4959-9cb0-cf8204ce0d61_EN-US1-ShortsCreation-5.5_1242_U200a_U00d7_U200a2208.png/392x696bb.png",
+            "https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/ca/ac/46/caac4625-ccc7-330d-e74e-a8da4b45c2bf/d92620be-5f49-4152-b689-88dbf8cd991a_iOS-5.5-in_1.png/392x696bb.png",
+            "https://is4-ssl.mzstatic.com/image/thumb/Purple122/v4/03/ca/63/03ca63b1-28d6-e164-193b-74e2dd4fd3ed/0aac5032-4ae3-48c7-bbea-be6fbb6bcdbd_iOS-5.5-in_2.png/392x696bb.png",
+            "https://is3-ssl.mzstatic.com/image/thumb/Purple112/v4/4a/a6/46/4aa64646-67b9-ec6f-5e66-47d164df1a01/4fb3cc2d-f1b1-481f-8f0f-cf73843d7cd7_iOS-5.5-in_3.png/392x696bb.png",
+            "https://is3-ssl.mzstatic.com/image/thumb/Purple112/v4/6b/a3/92/6ba39240-d2a1-946b-4dcf-a5a713531498/81d504a7-d2fc-4b4b-bbdb-d371d5342158_iOS-5.5-in_4.png/392x696bb.png"].map { .init(image: $0)}
+        )
     ]
 }
