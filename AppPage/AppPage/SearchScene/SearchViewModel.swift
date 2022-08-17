@@ -18,7 +18,7 @@ enum ServiceError: Error {
 class SearchViewModel: ObservableObject {
     var cancelBag = Set<AnyCancellable>()
     
-    func requestAppData(id: String = "872469884") -> AnyPublisher<Detail, Error> {
+    func requestAppData(id: String) -> AnyPublisher<Detail, Error> {
         guard let url = URL(string: "http://itunes.apple.com/lookup?id=" + id) else {
             return Fail(error: ServiceError.invalidURL).eraseToAnyPublisher()
         }

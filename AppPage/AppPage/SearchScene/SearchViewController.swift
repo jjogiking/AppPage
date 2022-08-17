@@ -69,7 +69,7 @@ class SearchViewController: UIViewController {
             return
         }
         
-        viewModel.requestAppData()
+        viewModel.requestAppData(id: id)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
                 switch completion {
