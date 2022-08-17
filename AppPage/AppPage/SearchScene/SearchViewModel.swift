@@ -9,9 +9,9 @@ import Combine
 import Foundation
 
 enum ServiceError: Error {
-    case serverSideError
-    case invalidResponse(responseCode: Int, message: String)
     case invalidURL
+    case transportError
+    case serverError(code: Int)
     case wrongResult
 }
 

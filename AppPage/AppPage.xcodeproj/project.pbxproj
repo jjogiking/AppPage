@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E3D1E6628ACF47100F2DE36 /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3D1E6528ACF47100F2DE36 /* URLSession+Extension.swift */; };
 		1E4518B728AA928800CD4C75 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4518B628AA928800CD4C75 /* FooterView.swift */; };
 		1E4518B928AA92BB00CD4C75 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4518B828AA92BB00CD4C75 /* HeaderView.swift */; };
 		1E4518BB28AA930100CD4C75 /* HeadlineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4518BA28AA930100CD4C75 /* HeadlineCell.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E3D1E6528ACF47100F2DE36 /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
 		1E4518B628AA928800CD4C75 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		1E4518B828AA92BB00CD4C75 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		1E4518BA28AA930100CD4C75 /* HeadlineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineCell.swift; sourceTree = "<group>"; };
@@ -55,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E3D1E6428ACF44F00F2DE36 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1E3D1E6528ACF47100F2DE36 /* URLSession+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		1E4518B528AA924100CD4C75 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +139,7 @@
 		1EF752DB28A544C300CF8F92 /* AppPage */ = {
 			isa = PBXGroup;
 			children = (
+				1E3D1E6428ACF44F00F2DE36 /* Extensions */,
 				1E4518C828AAA5E700CD4C75 /* Application */,
 				1E4518C728AAA59700CD4C75 /* DetailScene */,
 				1E4518C628AAA57D00CD4C75 /* SearchScene */,
@@ -214,6 +225,7 @@
 			files = (
 				1E72460128AA61D200C04114 /* SearchViewModel.swift in Sources */,
 				1E4518C028AA9B0500CD4C75 /* FeatureCell.swift in Sources */,
+				1E3D1E6628ACF47100F2DE36 /* URLSession+Extension.swift in Sources */,
 				1E4518BE28AA949F00CD4C75 /* AppSection.swift in Sources */,
 				1E4518B728AA928800CD4C75 /* FooterView.swift in Sources */,
 				1EF752DD28A544C300CF8F92 /* AppDelegate.swift in Sources */,
