@@ -5,11 +5,11 @@
 //  Created by Giwan Jo on 2022/08/15.
 //
 
-import UIKit
+import Foundation
 
 enum AppSection {
     struct Headline {
-        let image: UIImage
+        let image: String
         let title: String
         let desc: String
     }
@@ -19,7 +19,7 @@ enum AppSection {
     }
     
     struct Preview {
-        let image: UIImage
+        let image: String
     }
     
     case headline(Headline)
