@@ -38,6 +38,7 @@ final class HeadlineCell: UICollectionViewCell {
         
         contentView.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
         NSLayoutConstraint.activate([
             imageView.leftAnchor.constraint(equalTo: self.contentView.leftAnchor),
             imageView.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),

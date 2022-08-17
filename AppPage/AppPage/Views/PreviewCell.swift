@@ -23,6 +23,7 @@ final class PreviewCell: UICollectionViewCell {
         
         contentView.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
         NSLayoutConstraint.activate([
             imageView.leftAnchor.constraint(equalTo: self.contentView.leftAnchor),
             imageView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
